@@ -16,7 +16,9 @@ class PageController extends Controller
     }
 
     public function nuovaPagina(){
-        return view('nuova-pagina');
+
+        $movies = Movie::orderBy('title')->get();
+        return view('order-movies', compact('movies'));
     }
 
 }
